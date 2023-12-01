@@ -1,0 +1,44 @@
+//- Стандартный шаблон страницы
+
+include mixins.pug
+
+- isMainPage = false
+- pageTitle = 'title'
+- metaDescription = 'description'
+- metaKeywords = 'keywords'
+- src = paths
+
+block variables
+
+doctype html
+html(class='no-js', lang='ru')
+
+  head
+    include ../blocks/templates/head/meta.pug
+    include ../blocks/templates/head/link.pug
+
+    title= pageTitle
+
+    block meta
+      meta(name='description', content= metaDescription)
+      meta(name='keywords', content= metaKeywords)
+
+    block head
+      link(rel='stylesheet', href= src.css + 'style.css')
+      script
+        include ../js/head-script.js
+
+  body
+    noscript У вас отключен JavaScript. Это пугает.
+
+    .wrapper
+      +header
+      +menu
+      main.main
+        block content
+      //+footer
+
+    block templates
+
+    script(src= src.js + 'bundle.js')
+    block scripts

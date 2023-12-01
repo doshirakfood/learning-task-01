@@ -1,0 +1,32 @@
+//- Все примеси в этом файле должны начинаться c имени блока (logotype)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт в сборку
+
+mixin sidebar(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +sidebar('some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' sidebar--' + modsList[i].trim();
+      }
+    }
+
+  .sidebar(class= allMods)&attributes(attributes)
+    button(
+      type="button"
+      title="Открыть меню"
+      aria-label="Открыть меню"
+      data-slideout-id="sidebar-slideout"
+    ).button.js-slideout-trigger.sidebar-burger
+      span.sidebar-burger__line
+
+    #sidebar-slideout.sidebar-slideout.slideout
+      .sidebar-slideout__main
+      .sidebar-slideout__footer

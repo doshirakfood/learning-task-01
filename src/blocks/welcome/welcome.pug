@@ -1,0 +1,154 @@
+//- Все примеси в этом файле должны начинаться c имени блока (welcome)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт в сборку
+
+mixin welcome(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +welcome('some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    var sliderParams = {
+      options: {
+        type: "loop",
+        gap: "10px",
+        nearby: "nearby",
+      },
+      breakpoints: {
+        991: {
+          pagination: true
+        }
+      },
+      thumbs: true,
+      thumbsOptions: {
+        type: "loop",
+        gap: "20px",
+        fixedWidth: "196px",
+        fixedHeight: "196px",
+        breakpoints: {
+          1280: {
+            fixedWidth: "167px",
+            fixedHeight: "167px",
+          }
+        }
+      }
+    };
+    var slides = [
+      {
+        color: '#b3315e',
+        colorBlobsArray: ['#dc9138', '#981140'],
+        title: '2 605 детей',
+        desc: 'За все время работы фонда получили помощь и возможность заниматься спортом',
+        pic: 'pic-01.jpg',
+        more: true
+      },
+
+      {
+        color: '#f8b462',
+        colorBlobsArray: ['#067256', '#d07b16'],
+        title: 'Пас в будущее',
+        desc: 'Наша цель – дать возможность талантливым ребятам, увлеченным спортом, проявить свои способности',
+        pic: 'pic-02.jpg',
+        more: false
+      },
+
+      {
+        color: '#067256',
+        colorBlobsArray: ['#b3315e', '#04634a'],
+        title: 'Фонд передал футбольную площадку Центру помощи детям «Ручеёк»',
+        pic: 'pic-03.jpg',
+        more: true
+      }
+    ];
+    var blobAnimationParams = {
+      primary: {
+        d: [
+          { value: 'M292.595 233.862C301.528 243.321 307.92 246.562 310 247H0V9.20147C1.64194 6.24541 17.7331 -2.44726 38.0932 0.661741C85.7098 7.9328 77.1229 50.6758 118.5 62.5C134.457 67.0601 164.544 34.7992 167.5 32.5C169.864 30.6607 177.659 27.3758 181.271 26.6094C196.815 23.1059 233.222 22.2081 254.502 46.6449C280.915 76.976 270.744 110.869 268.67 117.776L268.623 117.919C267.047 123.174 250 137.5 247.5 141.5C241.18 147.42 225 174.5 264.49 171.23C275.429 170.324 289.968 175.726 292.595 184.923C294.697 192.28 291.72 202.878 289.968 207.257C287.122 212.184 283.663 224.403 292.595 233.862Z'},
+          { value: 'M292.595 233.862C301.528 243.321 307.92 246.562 310 247H0V9.20147C1.64194 6.24541 17.7331 -2.44726 38.0932 0.661741C85.7098 7.9328 76.1864 29.237 117.564 41.0612C133.521 45.6213 164.523 33.5068 167.479 31.2077C169.843 29.3684 177.659 27.3758 181.271 26.6094C196.815 23.1059 233.222 22.2081 254.502 46.6449C280.915 76.976 270.739 110.869 268.666 117.776L268.623 117.919C267.047 123.174 266.434 135.217 266.324 140.582C267.2 146.166 270.659 158.712 277.489 164.23C286.028 171.128 289.968 175.726 292.595 184.923C294.697 192.28 291.72 202.878 289.968 207.257C287.122 212.184 283.663 224.403 292.595 233.862Z' },
+        ],
+        easing: 'easeInOutSine',
+        duration: 10000,
+        direction: 'infinite alternate',
+        loop: true
+      },
+
+      secondary: {
+        d: [
+          { value: 'M232.393 69.02C262.679 59.4297 276.943 43.1513 276.943 15.7231C276.943 10.4886 275.815 5.15566 273.772 0H0.0117198C-0.345971 6.85278 7.56703 38.6244 12.3722 47.16C22.4682 65.0938 47.0301 34.2753 60.4609 60.25C77.4683 93.1416 96.0598 84.5654 100.962 86.12C105.865 87.6746 134.765 80.175 161.702 60.25C188.667 40.3049 199.078 79.5693 232.393 69.02Z' },
+          { value: 'M218.447 79.0195C248.733 69.4292 277 43.1513 277 15.7231C277 10.4886 275.872 5.15566 273.829 0H0.0692462C-0.288445 6.85278 0.629352 15.6276 5.43453 24.1632C15.5305 42.097 34.9829 45.4715 48.4137 71.4462C65.4211 104.338 82.1195 106.565 87.0221 108.119C91.9248 109.674 123.819 115.177 150.757 95.2516C177.721 75.3065 185.132 89.5688 218.447 79.0195Z' },
+        ],
+        easing: 'easeInOutSine',
+        duration: 10000,
+        direction: 'infinite alternate',
+        loop: true
+      }
+    };
+
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' welcome--' + modsList[i].trim();
+      }
+    }
+
+  section(
+    style=`
+      --welcome-bg-color: ${slides[0].color};
+      --welcome-fill-blob-primary: ${slides[0].colorBlobsArray[0]};
+      --welcome-fill-blob-secondary: ${slides[0].colorBlobsArray[1]};
+    `
+  ).section.welcome(class=allMods)&attributes(attributes)
+    svg.welcome__blob.primary(
+      width="310"
+      height="247"
+      viewBox="0 0 310 247"
+      xmlns="http://www.w3.org/2000/svg"
+    )
+      path.js-animation(
+        data-animation-options=`${JSON.stringify(blobAnimationParams.primary)}`
+        d="M292.595 233.862C301.528 243.321 307.92 246.562 310 247H0V9.20147C1.64194 6.24541 17.7331 -2.44726 38.0932 0.661741C85.7098 7.9328 76.1864 29.237 117.564 41.0612C133.521 45.6213 164.523 33.5068 167.479 31.2077C169.843 29.3684 177.659 27.3758 181.271 26.6094C196.815 23.1059 233.222 22.2081 254.502 46.6449C280.915 76.976 270.739 110.869 268.666 117.776L268.623 117.919C267.047 123.174 266.434 135.217 266.324 140.582C267.2 146.166 270.659 158.712 277.489 164.23C286.028 171.128 289.968 175.726 292.595 184.923C294.697 192.28 291.72 202.878 289.968 207.257C287.122 212.184 283.663 224.403 292.595 233.862Z"
+      )
+
+    svg.welcome__blob.secondary(
+      width="277"
+      height="110"
+      viewBox="0 0 277 110"
+      xmlns="http://www.w3.org/2000/svg"
+    )
+      path.js-animation(
+        data-animation-options=`${JSON.stringify(blobAnimationParams.secondary)}`
+        d="M218.447 79.0195C248.733 69.4292 277 43.1513 277 15.7231C277 10.4886 275.872 5.15566 273.829 0H0.0692462C-0.288445 6.85278 0.629352 15.6276 5.43453 24.1632C15.5305 42.097 34.9829 45.4715 48.4137 71.4462C65.4211 104.338 82.1195 106.565 87.0221 108.119C91.9248 109.674 123.819 115.177 150.757 95.2516C177.721 75.3065 185.132 89.5688 218.447 79.0195Z"
+      )
+
+    .welcome__container.container
+      +slider(
+        sliderParams.options,
+        sliderParams.breakpoints,
+        sliderParams.thumbs,
+        sliderParams.thumbsOptions
+      ).welcome__slider
+        each slideItem, index in slides
+          div(
+            data-color=`${slideItem.color}`
+            data-colors-blob=`${slideItem.colorBlobsArray.join()}`
+            data-slider-thumb=`./img/${slideItem.pic}`
+          ).welcome-slide.splide__slide
+            .welcome-slide__row
+              //left
+              .welcome-slide__col.left
+                h2.welcome__title.title(class=`${index === 2 ? 'secondary' : ''}`)=slideItem.title
+                - if(slideItem.desc)
+                  p.welcome__desc=slideItem.desc
+                - if(slideItem.more)
+                  a(href="#").welcome__more Подробнее
+
+              //right
+              .welcome-slide__col.right
+                img(
+                  data-splide-lazy=`./img/${slideItem.pic}`
+                  alt=slideItem.title
+                ).welcome__pic
+

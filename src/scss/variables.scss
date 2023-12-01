@@ -1,21 +1,35 @@
 @use "sass:color";
 
 :root {
+  --color-text-2: #000;
   --color-black: #000;
   --color-white: #fff;
+  --color-gold: #f2a84f;
+  --color-youtube: #ee3a3a;
+  --color-ok: #ff7a00;
+  --color-vk: #0077ff;
+  --color-telegram: #3390ec;
+
+  --color-icon-1: #000;
+  --color-icon-4: #d91869;
+
   --body-color: var(--front-primary);
   --body-bg: var(--back-primary);
+  --body-bg-10: #f3f3f3;
   --font-base: var(--font-sans);
   --font-sans:
-    Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu",
+    'Roboto Flex', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu",
     "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
   --font-serif: Georgia, "Times New Roman", Times, serif;
   --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, "Courier New", monospace;
+  --font-secondary: 'Noto Sans Medium', Arial, sans-serif;
   --font-size-root: 100%;
   --font-size-base: 1rem;
   --font-weight-base: 400;
   --line-height-base: 1.25;
+  --transition-delay: 0.2s;
+  --transition-delay-animation: 0.7s;
 }
 
 @media (prefers-color-scheme: light) {
@@ -34,6 +48,8 @@
     --back-tertiary: #e0e0e0;
     --back-transparency: rgb(255 255 255 / 70%);
     --color-warning: #f43f5e;
+    --color-icon-1: #000;
+    --color-text-2: #000;
 
 
     // Оформление
@@ -64,6 +80,8 @@
     --back-tertiary: #292932;
     --back-transparency: rgb(25 25 30 / 70%);
     --color-warning: #f43f5e;
+    --color-icon-1: #fff;
+    --color-text-2: #fff;
 
 
     // Оформление

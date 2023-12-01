@@ -1,0 +1,354 @@
+.welcome {
+  $pic-radius: 4px;
+
+  color: #fff;
+  position: relative;
+  background-color: var(--welcome-bg-color);
+
+  //>= 1440px
+  @media screen and (min-width: $screen-dl) {
+    height: 660px;
+  }
+
+  //>= 992px
+  @media screen and (min-width: $screen-tl) {
+    height: 572px;
+    margin-top: -104px;
+  }
+
+  //>= 0px
+  @media screen and (min-width: $screen-m) {
+    height: 458px;
+    margin-top: 0px;
+  }
+
+  &__container {
+    z-index: 2;
+    position: relative;
+
+    //>= 992px
+    @media screen and (min-width: $screen-tl) {
+      padding-top: 130px;
+    }
+
+    //>= 0px
+    @media screen and (min-width: $screen-m) {
+      padding-top: 50px;
+    }
+  }
+
+  &__blob {
+    z-index: 1;
+    position: absolute;
+
+    //>= 992px
+    @media screen and (min-width: $screen-tl) {
+      display: inline-block;
+    }
+
+    //>= 0px
+    @media screen and (min-width: $screen-m) {
+      display: none;
+    }
+
+    &.primary {
+      left: 0px;
+      bottom: 0px;
+      fill: var(--welcome-fill-blob-primary);
+    }
+
+    &.secondary {
+      top: 0px;
+      fill: var(--welcome-fill-blob-secondary);
+
+      //>= 1440px
+      @media screen and (min-width: $screen-dl) {
+        right: 266px;
+      }
+
+      //>= 992px
+      @media screen and (min-width: $screen-tl) {
+        right: 0px;
+      }
+    }
+  }
+
+  &-slide {
+    &__row {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      //>= 992px
+      @media screen and (min-width: $screen-tl) {
+        flex-direction: row;
+      }
+
+      //>= 0px
+      @media screen and (min-width: $screen-m) {
+        flex-direction: column;
+      }
+    }
+
+    &__col {
+      //>= 1440px
+      @media screen and (min-width: $screen-dl) {
+        &.left {
+          flex-basis: 520px;
+        }
+
+        &.right {
+          flex-basis: 628px;
+        }
+      }
+
+      //>= 992px
+      @media screen and (min-width: $screen-tl) {
+        &.left {
+          flex-basis: 447px;
+          margin: 25px 20px 0px 0px;
+        }
+
+        &.right {
+          margin: 0px;
+          flex-basis: 540px;
+        }
+      }
+
+      //>= 0px
+      @media screen and (min-width: $screen-m) {
+        &.left {
+          flex:  1 0 auto;
+          max-width: 420px;
+          margin: 0px 0px 50px;
+        }
+
+        &.right {
+          margin: 0px 65px 0px 0px;
+        }
+      }
+
+      @media screen and (max-width: 320px) {
+        &.right {
+          margin: 0px 44px 0px 0px;
+        }
+      }
+    }
+  }
+
+  &__slider {
+    position: initial;
+    .splide {
+      &__arrows {
+        top: auto;
+        left: auto;
+        position: absolute;
+
+        display: flex;
+        flex-direction: column;
+
+        //>= 992px
+        @media screen and (min-width: $screen-tl) {
+          right: 51.2%;
+          bottom: -75px;
+        }
+
+        //>= 0px
+        @media screen and (min-width: $screen-m) {
+          right: 20px;
+          bottom: -45px;
+        }
+
+      }
+
+      &__arrow {
+        // -reset-
+        left: 0px;
+        right: 0px;
+        position: relative;
+        opacity: 1;
+        border-radius: 0px;
+        transform: translateY(0px);
+        background-color: transparent;
+        // -/reset-
+
+        transition: transform 0.25s ease;
+
+        //>= 992px
+        @media screen and (min-width: $screen-tl) {
+          width: 50px;
+          height: 50px;
+        }
+
+        //>= 0px
+        @media screen and (min-width: $screen-m) {
+          width: 32px;
+          height: 32px;
+        }
+
+        svg {
+          //>= 992px
+          @media screen and (min-width: $screen-tl) {
+            width: 50px;
+            height: 40px;
+          }
+
+          //>= 0px
+          @media screen and (min-width: $screen-m) {
+            width: 32px;
+            height: 32px;
+          }
+        }
+
+        &--prev {
+          @media (hover: hover) {
+            &:hover {
+              transform: translateX(-12px);
+            }
+          }
+
+          //>= 992px
+          @media screen and (min-width: $screen-tl) {
+            margin-top: 50px;
+          }
+
+          //>= 0px
+          @media screen and (min-width: $screen-m) {
+            margin-top: 25px;
+          }
+        }
+
+        &--next {
+          order: -1;
+          svg {
+            fill: #fff;
+          }
+
+          @media (hover: hover) {
+            &:hover {
+              transform: translateX(12px);
+            }
+          }
+        }
+      }
+
+      &__pagination {
+        position: relative;
+        padding: 13px 0px 0px 110px;
+        justify-content: flex-start;
+        @media screen and (max-width: 320px) {
+          padding-left: 90px;
+        }
+      }
+    }
+  }
+
+  &__title {
+    margin: 0px;
+    font-weight: 500;
+
+    //>= 992px
+    @media screen and (min-width: $screen-tl) {
+      font-size: 72px;
+      &.secondary {
+        font-size: 48px;
+      }
+    }
+
+    //>= 0px
+    @media screen and (min-width: $screen-m) {
+      font-size: 40px;
+      &.secondary {
+        font-size: 28px;
+      }
+    }
+  }
+
+  &__desc {
+    //>= 992px
+    @media screen and (min-width: $screen-tl) {
+      font-size: 24px;
+      line-height: 32px;
+      margin: 28px 0px 0px;
+    }
+
+    //>= 0px
+    @media screen and (min-width: $screen-m) {
+      font-size: 16px;
+      margin: 20px 0px 0px;
+    }
+  }
+
+  &__more {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    padding-bottom: 2px;
+    border-bottom: 2px solid;
+
+    //>= 992px
+    @media screen and (min-width: $screen-tl) {
+      font-size: 24px;
+      margin: 40px 0px 0px;
+    }
+
+    //>= 0px
+    @media screen and (min-width: $screen-m) {
+      font-size: 16px;
+      margin: 20px 0px 0px;
+    }
+  }
+
+  &__pic {
+    display: block;
+    object-fit: cover;
+    border-radius: $pic-radius;
+
+    //>= 1440px
+    @media screen and (min-width: $screen-dl) {
+      height: 628px;
+    }
+
+    //>= 992px
+    @media screen and (min-width: $screen-tl) {
+      width: 100%;
+      height: 540px;
+    }
+
+    //>= 0px
+    @media screen and (min-width: $screen-m) {
+      width: 271px;
+      height: 271px;
+    }
+  }
+
+  .slider {
+    &-thumbs {
+      bottom: -98px;
+      position: absolute;
+      .splide {
+        &__slide {
+          overflow: hidden;
+          border-radius: $pic-radius;
+          border: 0px !important;
+        }
+      }
+
+      //>= 1440px
+      @media screen and (min-width: $screen-dl) {
+        width: 412px;
+      }
+
+      //>= 992px
+      @media screen and (min-width: $screen-tl) {
+        width: 354px;
+        display: block;
+      }
+
+      //>= 0px
+      @media screen and (min-width: $screen-m) {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@import "../../scss/mixins/grid";
+@import "../../scss/mixins/flexbox";
+
+.menu {
+  $block-name: &; // #{$block-name}__element
+
+  color: #fff;
+  z-index: 5;
+  padding: 30px 0px;
+  position: relative;
+  &__row {
+    margin: -10px;
+    @include flex-center-sb;
+  }
+
+  &__col {
+    margin: 10px;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  //>= 992px
+  @media screen and (min-width: $screen-tl) {
+    display: block;
+  }
+
+  //>= 0px
+  @media screen and (min-width: $screen-m) {
+    display: none;
+  }
+}

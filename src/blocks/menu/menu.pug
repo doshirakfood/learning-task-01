@@ -1,0 +1,30 @@
+//- Все примеси в этом файле должны начинаться c имени блока (menu)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт в сборку
+
+mixin menu(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +menu('some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' menu--' + modsList[i].trim();
+      }
+    }
+
+  div.menu(class= allMods)&attributes(attributes)
+    .menu__container.container
+      .menu__row
+        //left
+        .menu__col.--left
+          +nav
+
+        //right
+        .menu__col.--right
+          +button-help

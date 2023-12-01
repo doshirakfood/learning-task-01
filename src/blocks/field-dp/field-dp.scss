@@ -17,7 +17,7 @@
     position: absolute;
     top: 40px;
     left: 20px;
-    transition: all 0.25s ease;
+    transition: all var(--transition-delay) ease;
 
     #{$block-name}__input[required] + &::after {
       margin-left: 2px;

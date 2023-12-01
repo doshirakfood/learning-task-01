@@ -1,0 +1,41 @@
+@import "../../scss/mixins/flexbox";
+
+.social-network {
+  $block-name: &; // #{$block-name}__element
+
+  //>= 992px
+  @media screen and (min-width: $screen-tl) {
+    &.--desktop {
+      display: inline-block;
+    }
+  }
+
+  //>= 0px
+  @media screen and (min-width: $screen-m) {
+    &.--desktop {
+      display: none;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__item {
+    width: 48px;
+    height: 48px;
+
+    @include flex-center;
+    & + #{$block-name}__item {
+      margin-left: 4px;
+      padding-left: 4px;
+      border-left: 1px solid #f3f3f3;
+    }
+  }
+}

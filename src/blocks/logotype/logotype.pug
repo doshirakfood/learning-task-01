@@ -1,0 +1,28 @@
+//- Все примеси в этом файле должны начинаться c имени блока (logotype)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт в сборку
+
+mixin logotype(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +logotype('some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' logotype--' + modsList[i].trim();
+      }
+    }
+
+  a(
+    href=""
+    aria-label="Логотип Компании"
+    title="Перейти на главную страницу"
+  ).logotype(class= allMods)&attributes(attributes)
+    svg.logotype__icon
+      use(href= src.icon + 'logotype')
+    span Благотворительный<br/> фонд

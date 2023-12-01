@@ -1,0 +1,44 @@
+.logotype {
+  $block-name: &; // #{$block-name}__element
+
+  display: inline-flex;
+  align-items: center;
+
+  font-weight: 500;
+  font-family: var(--font-secondary);
+  line-height: 100%;
+  text-decoration: none;
+  color: var(--color-text-2);
+  fill: var(--color-gold);
+  &__icon {
+    fill: inherit;
+  }
+
+  //>= 992px
+  @media screen and (min-width: $screen-tl) {
+    font-size: 24px;
+    &__icon {
+      width: 75px;
+      height: 75px;
+      margin-right: 20px;
+    }
+  }
+
+  //>= 0px
+  @media screen and (min-width: $screen-m) {
+    font-size: 16px;
+    &__icon {
+      width: 44px;
+      height: 44px;
+      margin-right: 10px;
+    }
+  }
+
+  @media screen and (max-width: calc($screen-mi + 40px)) {
+    font-size: 14px;
+    &__icon {
+      width: 34px;
+      height: 34px;
+    }
+  }
+}

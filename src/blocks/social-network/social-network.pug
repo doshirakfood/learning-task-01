@@ -1,0 +1,57 @@
+//- Все примеси в этом файле должны начинаться c имени блока (social-network)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт в сборку
+
+mixin social-network(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +social-network('some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    var listArray = [
+      {
+        name: 'youtube',
+        label: 'Youtube',
+        icon: 'logo__youtube'
+      },
+
+      {
+        name: 'ok',
+        label: 'OK.ru',
+        icon: 'logo__ok'
+      },
+
+      {
+        name: 'vk',
+        label: 'VK',
+        icon: 'logo__vk'
+      },
+
+      {
+        name: 'telegram',
+        label: 'Telegram',
+        icon: 'logo__telegram'
+      }
+    ]
+
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' social-network--' + modsList[i].trim();
+      }
+    }
+
+  nav(aria-label="Соц.сети").social-network(class= allMods)&attributes(attributes).--desktop
+    .social-network__row
+      each variable in listArray
+        a(
+          href="#"
+          aria-label=`Следите за нами в ${variable.label}`
+          title=`Следите за нами в ${variable.label}`
+          class=`social-network__item color-${variable.name}`
+        )
+          svg.social-network__icon
+            use(href= src.icon + variable.icon)

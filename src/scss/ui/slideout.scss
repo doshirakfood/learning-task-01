@@ -1,0 +1,46 @@
+@import "../../scss/mixins/grid";
+@import "../../scss/mixins/flexbox";
+@import "../../scss/breakpoints";
+
+.slideout {
+  &-wrapper {
+    transition: opacity var(--transition-delay) ease;
+  }
+
+  &-content {
+    background-color: var(--body-bg);
+  }
+
+  &-header {
+    display: flex;
+    justify-content: flex-end;
+
+    //>= 992px
+    @media screen and (min-width: $screen-tl) {
+      padding: 24px 20px;
+    }
+
+    //>= 0px
+    @media screen and (min-width: $screen-m) {
+      padding: 19px 20px;
+    }
+  }
+
+  &-main {
+    padding: 26px 0px;
+  }
+
+  &-close {
+    @include flex-center;
+
+    border: 0px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--color-icon-1);
+    }
+  }
+}

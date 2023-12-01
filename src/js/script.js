@@ -1,13 +1,12 @@
-// import ready from "../js/utils/documentReady.js";
-// import getScrollSize from "../js/utils/getScrollSize.js";
+// utils
+import ready from "../js/utils/documentReady.js";
+// others
+import cfAnimations from "./others/animation";
 
-// ready(function () {
-//   console.log("DOM героически построен!");
-//   // Добавление кастомного свойства с системной шириной скролла
-//   document.documentElement.style.setProperty("--css-scroll-size", `${getScrollSize()}px`);
-// });
 
-// import $ from "jquery"; // Перед использованием установить как зависимость
-// $(function () {
-//   console.log("jQuery героически сработал!");
-// });
+ready(function () {
+  cfAnimations.init()
+  console.log("DOM героически построен!");
+});
+
+

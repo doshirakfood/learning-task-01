@@ -1,0 +1,37 @@
+//- Все примеси в этом файле должны начинаться c имени блока (slider)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт в сборку
+
+mixin slider(sliderOptions, sliderBreakpoints, thumbs, thumbsOptions, mods)
+  //- Принимает:
+    //-   sliderOptions {object}  - основные параметры слайдера;
+    //-   thumbs        {boolean} - включить миниатюры слайдера;
+    //-   thumbsOptions {object}  - основные параметры слайдера с миниатюрами;
+    //-   mods          {string}  - список модификаторов
+    //- Вызов:
+          +slider(
+            { "type": "loop" },
+            true,
+            { "fixedWidth": "196px", "fixedHeight": "196px", "gap": "20px" },
+            modsClass
+          )
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if (typeof (mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' slider--' + modsList[i].trim();
+      }
+    }
+
+  div.js-slider(
+    class=allMods,
+    data-slider-options=sliderOptions || false,
+    data-slider-breakpoints=sliderBreakpoints || false,
+    data-slider-thumbs=thumbs || false,
+    data-thumbs-options=thumbsOptions || false
+  )&attributes(attributes)
+    .splide__track
+      .splide__list
+        block

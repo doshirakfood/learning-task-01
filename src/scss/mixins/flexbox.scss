@@ -10,6 +10,18 @@
   justify-content: space-between;
 }
 
+@mixin flex-center-fs {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin flex-center-fe {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 @mixin flex-column {
   display: flex;
   flex-direction: column;

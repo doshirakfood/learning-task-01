@@ -4,8 +4,11 @@
 .button {
   $block-name: &; // #{$block-name}__element
 
-  @include flex-center;
   @include button-title;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
   padding: 11px 20px;
   color: var(--front-invert);
@@ -14,11 +17,19 @@
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  transition: background 0.25s ease, border 0.25s ease, color 0.25s ease;
+  transition: all var(--transition-delay);
   appearance: none;
 
   &:focus {
     outline: 3px solid var(--brand-primary-light);
+  }
+
+  .icon {
+    height: 20px;
+    width: 20px;
+    &--left {
+      margin-right: 10px;
+    }
   }
 
   &--primary {
@@ -56,11 +67,39 @@
     pointer-events: none;
   }
 
+  &--help {
+    padding: 0px;
+    font-size: 18px;
+    .icon {
+      width: 44px;
+      height: 44px;
+      transform-origin: center;
+      animation: AnimeHeart var(--transition-delay-animation) ease-in-out infinite alternate;
+    }
+  }
+
+  &--icon {
+    width: 32px;
+    height: 32px;
+    padding: 5px;
+  }
+
   &[disabled] {
     cursor: not-allowed;
   }
 
   &__title {
     display: block;
+  }
+}
+
+
+@keyframes AnimeHeart {
+  from {
+    transform: scale(0.8);
+  }
+
+  to {
+    transform: scale(1);
   }
 }

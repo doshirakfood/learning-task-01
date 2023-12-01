@@ -37,6 +37,7 @@ let config = {
   ],
   "alwaysAddBlocks": [],
   "addStyleBefore": [
+    "./libs/basic-ui.min.css",
     "sanitize.css/sanitize.css",
     "sanitize.css/forms.css",
     "sanitize.css/assets.css",
@@ -48,11 +49,15 @@ let config = {
     // "src/scss/typography.scss",
     // "src/scss/vendor.scss",
     "src/scss/fonts.scss",
+    "src/scss/atomic.scss",
+    "src/scss/ui/slideout.scss",
+    "src/scss/ui/slider.scss",
     // "src/scss/animations.scss"
     // "somePackage/dist/somePackage.css", // для "node_modules/somePackage/dist/somePackage.css",
   ],
   "addStyleAfter": [],
   "addJsBefore": [
+    "./libs/basic-ui.min.js",
     // "somePackage/dist/somePackage.js", // для "node_modules/somePackage/dist/somePackage.js",
   ],
   "addJsAfter": [

@@ -1,0 +1,23 @@
+.slider {
+  .splide {
+    &__pagination {
+      $block-pagination: &;
+      &__page {
+        opacity: 1;
+        width: 4px;
+        height: 4px;
+        margin: 6.5px;
+        background-color: var(--color-icon-1);
+        &.is-active {
+          transform: scale(2);
+        }
+      }
+    }
+
+    &__arrow {
+      svg {
+        fill: var(--color-icon-1);
+      }
+    }
+  }
+}
