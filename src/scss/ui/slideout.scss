@@ -3,9 +3,9 @@
 @import "../../scss/breakpoints";
 
 .slideout {
-  &-wrapper {
-    transition: opacity var(--transition-delay) ease;
-  }
+  //&-wrapper {
+  //  transition: opacity var(--transition-delay) ease;
+  //}
 
   &-content {
     background-color: var(--body-bg);
