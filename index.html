@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=3, minimum-scale=0.1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="date=no">
+  <meta name="format-detection" content="address=no">
+  <meta name="format-detection" content="email=no">
+  <meta name="google" content="notranslate">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="robots" content="index, follow">
+  <meta name="msapplication-TileColor" content="#5bbad5">
+  <meta name="theme-color" content="#000">
+  <meta name="msapplication-navbutton-color" content="#000">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+  <link rel="preload" href="fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/Inter-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="./img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <title>Стартовая страница</title>
+  <meta name="description" content="description">
+  <meta name="keywords" content="keywords">
+  <link rel="stylesheet" href="css/style.css"><script>// Убрать на html класс "no-js", добавить класс "js": с уровня стилей знаем работает ли JS
+document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+// Браузер и ОС
+function cth(c){document.documentElement.classList.add(c)}
+'ontouchstart' in window?cth('touch'):cth('no-touch');
+if(typeof InstallTrigger!=='undefined')cth('firefox');
+if(/constructor/i.test(window.HTMLElement)||(function(p){return p.toString()==="[object SafariRemoteNotification]"})(!window['safari']||(typeof safari!=='undefined'&&safari.pushNotification)))cth('safari');
+if(/*@cc_on!@*/!!document.documentMode)cth('ie');
+if(!(!!document.documentMode)&&!!window.StyleMedia)cth('edge');
+if(!!window.chrome&&(!!window.chrome.webstore||!!window.chrome.runtime))cth('chrome');
+if(~navigator.appVersion.indexOf("Win"))cth('windows');
+if(~navigator.appVersion.indexOf("Mac"))cth('osx');
+if(~['iPad','iPhone','iPod'].indexOf(navigator.platform))cth('ios');
+if(~navigator.appVersion.indexOf("Linux"))cth('linux');
+
+// Добавление 1vh (использование: height: 100vh; height: calc(var(--vh, 1vh) * 100);) для фикса 100vh на мобилках
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+window.addEventListener('resize', () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+</script>
+</head>
+
+<body><noscript>У вас отключен JavaScript. Это пугает.</noscript>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__container container">
+        <div class="header__row"><!--left-->
+          <div class="header__col --left"><a class="logotype" href="" aria-label="Логотип Компании" title="Перейти на главную страницу"><svg class="logotype__icon">
+                <use href="./img/svgSprite.svg#logotype"></use>
+              </svg><span>Благотворительный<br/> фонд</span></a></div><!--right-->
+          <div class="header__col --right">
+            <div class="header-groups"><a class="button  button--icon header__heart header-groups__item" title="Хочу помочь" aria-label="Хочу помочь" href="#"><svg class="icon color-icon-4">
+                  <use href="./img/svgSprite.svg#icon__heart-1"></use>
+                </svg></a>
+              <div class="sidebar header-groups__item"><button class="button js-slideout-trigger sidebar-burger" type="button" title="Открыть меню" aria-label="Открыть меню" data-slideout-id="sidebar-slideout"><span class="sidebar-burger__line"></span></button>
+                <div class="sidebar-slideout slideout" id="sidebar-slideout">
+                  <div class="sidebar-slideout__main"></div>
+                  <div class="sidebar-slideout__footer"></div>
+                </div>
+              </div>
+              <nav class="social-network --desktop header-groups__item" aria-label="Соц.сети">
+                <div class="social-network__row"><a class="social-network__item color-youtube" href="#" aria-label="Следите за нами в Youtube" title="Следите за нами в Youtube"><svg class="social-network__icon">
+                      <use href="./img/svgSprite.svg#logo__youtube"></use>
+                    </svg></a><a class="social-network__item color-ok" href="#" aria-label="Следите за нами в OK.ru" title="Следите за нами в OK.ru"><svg class="social-network__icon">
+                      <use href="./img/svgSprite.svg#logo__ok"></use>
+                    </svg></a><a class="social-network__item color-vk" href="#" aria-label="Следите за нами в VK" title="Следите за нами в VK"><svg class="social-network__icon">
+                      <use href="./img/svgSprite.svg#logo__vk"></use>
+                    </svg></a><a class="social-network__item color-telegram" href="#" aria-label="Следите за нами в Telegram" title="Следите за нами в Telegram"><svg class="social-network__icon">
+                      <use href="./img/svgSprite.svg#logo__telegram"></use>
+                    </svg></a></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="menu">
+      <div class="menu__container container">
+        <div class="menu__row"><!--left-->
+          <div class="menu__col --left">
+            <nav class="nav --desktop" aria-label="Главное меню">
+              <div class="nav__row"><a class="nav__item" href="#">О Фонде</a><a class="nav__item" href="#">Программы</a><a class="nav__item" href="#">Благодарности</a><a class="nav__item" href="#">Пресс-центр</a><a class="nav__item" href="#">Мероприятия</a><a class="nav__item" href="#">Контакты</a></div>
+            </nav>
+          </div><!--right-->
+          <div class="menu__col --right"><a class="button  button--help" title="Хочу помочь" aria-label="Хочу помочь" href="#"><svg class="icon icon--left anime--heart">
+                <use href="./img/svgSprite.svg#icon__heart"></use>
+              </svg>Хочу помочь</a></div>
+        </div>
+      </div>
+    </div>
+    <main class="main">
+      <div class="container">
+        <nav class="nav-page"><a class="nav-page__item" href="main.html">Главная страница</a></nav>
+      </div>
+    </main><!--+footer-->
+  </div>
+  <style>
+    .nav-page {
+      display: flex;
+      flex-direction: column;
+      padding: 50px 0px;
+    }
+
+    .nav-page__item+.nav-page__item {
+      margin-top: 20px;
+    }
+  </style><script src="js/bundle.js"></script>
+</body>
+
+</html>
