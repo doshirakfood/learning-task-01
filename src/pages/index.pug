@@ -29,4 +29,4 @@ block content
   .container
     nav.nav-page
       each variable in navListArray
-        a(href=variable.url).nav-page__item=variable.label
+        a.nav-page__item(href=variable.url)= variable.label

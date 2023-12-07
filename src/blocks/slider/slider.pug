@@ -25,13 +25,7 @@ mixin slider(sliderOptions, sliderBreakpoints, thumbs, thumbsOptions, mods)
       }
     }
 
-  div.js-slider(
-    class=allMods,
-    data-slider-options=sliderOptions || false,
-    data-slider-breakpoints=sliderBreakpoints || false,
-    data-slider-thumbs=thumbs || false,
-    data-thumbs-options=thumbsOptions || false
-  )&attributes(attributes)
+  .js-slider(class=allMods, data-slider-options=sliderOptions || false, data-slider-breakpoints=sliderBreakpoints || false, data-slider-thumbs=thumbs || false, data-thumbs-options=thumbsOptions || false)&attributes(attributes)
     .splide__track
       .splide__list
         block

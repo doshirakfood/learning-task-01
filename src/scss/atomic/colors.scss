@@ -1,33 +1,33 @@
 .color {
   &-youtube {
-    fill: var(--color-youtube);
     color: var(--color-youtube);
+    fill: var(--color-youtube);
   }
 
   &-ok {
-    fill: var(--color-ok);
     color: var(--color-ok);
+    fill: var(--color-ok);
   }
 
   &-vk {
-    fill: var(--color-vk);
     color: var(--color-vk);
+    fill: var(--color-vk);
   }
 
   &-telegram {
-    fill: var(--color-telegram);
     color: var(--color-telegram);
+    fill: var(--color-telegram);
   }
 
   &-icon {
     &-1 {
-      fill: var(--color-icon-1);
       color: var(--color-icon-1);
+      fill: var(--color-icon-1);
     }
 
     &-4 {
-      fill: var(--color-icon-4);
       color: var(--color-icon-4);
+      fill: var(--color-icon-4);
     }
   }
 }

@@ -27,16 +27,17 @@
   }
 
   &-main {
-    padding: 26px 0px;
+    padding: 26px 0;
   }
 
   &-close {
-    @include flex-center;
+    @include flex-center();
 
-    border: 0px;
     width: 32px;
     height: 32px;
+    border: 0;
     cursor: pointer;
+
     svg {
       width: 16px;
       height: 16px;

@@ -18,13 +18,13 @@ mixin menu(mods)
       }
     }
 
-  div.menu(class= allMods)&attributes(attributes)
+  .menu(class= allMods)&attributes(attributes)
     .menu__container.container
       .menu__row
         //left
-        .menu__col.--left
+        .menu__col.menu__col--left
           +nav
 
         //right
-        .menu__col.--right
+        .menu__col.menu__co--right
           +button-help

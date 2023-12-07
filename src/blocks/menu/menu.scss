@@ -1,25 +1,12 @@
 @import "../../scss/mixins/grid";
 @import "../../scss/mixins/flexbox";
+@import "../../scss/breakpoints";
 
 .menu {
-  $block-name: &; // #{$block-name}__element
-
-  color: #fff;
-  z-index: 5;
-  padding: 30px 0px;
   position: relative;
-  &__row {
-    margin: -10px;
-    @include flex-center-sb;
-  }
-
-  &__col {
-    margin: 10px;
-  }
-
-  a {
-    color: inherit;
-  }
+  z-index: 5;
+  padding: 30px 0;
+  color: #fff;
 
   //>= 992px
   @media screen and (min-width: $screen-tl) {
@@ -29,5 +16,19 @@
   //>= 0px
   @media screen and (min-width: $screen-m) {
     display: none;
+  }
+
+  &__row {
+    @include flex-center-sb();
+
+    margin: -10px;
+  }
+
+  &__col {
+    margin: 10px;
+  }
+
+  a {
+    color: inherit;
   }
 }

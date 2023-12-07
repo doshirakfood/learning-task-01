@@ -18,11 +18,7 @@ mixin logotype(mods)
       }
     }
 
-  a(
-    href=""
-    aria-label="Логотип Компании"
-    title="Перейти на главную страницу"
-  ).logotype(class= allMods)&attributes(attributes)
+  a.logotype(href='#', aria-label='Логотип Компании', title='Перейти на главную страницу', class=allMods)&attributes(attributes)
     svg.logotype__icon
       use(href= src.icon + 'logotype')
     span Благотворительный<br/> фонд

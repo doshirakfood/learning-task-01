@@ -1,36 +1,36 @@
 import anime from "../libs/anime.min";
 
 const cfAnimations = (() => {
-  var $el = null,
-      $options = {}
+  let $el = null;
+  let $options = {};
 
   const init = (el, options) => {
-    const elArray = Array.from(el || document.querySelectorAll('.js-animation'));
+    const elArray = Array.from(el || document.querySelectorAll(".js-animation"));
 
     elArray.forEach((variable) => {
       try {
         $el = variable;
-        $options = options || JSON.parse(variable.getAttribute('data-animation-options'))
+        $options = options || JSON.parse(variable.getAttribute("data-animation-options"));
 
-        build()
+        build();
       } catch (error) {
-        console.error('#cfAnimations', error.message)
+        console.error("#cfAnimations", error.message);
       }
-    })
-  }
+    });
+  };
 
   const build = () => {
-    const animeParams = Object.assign({ targets: $el }, $options)
-    const animeInit = anime(animeParams)
+    const animeParams = Object.assign({ targets: $el }, $options);
+    const animeInit = anime(animeParams);
 
-    $el.classList.add('animation-init')
+    $el.classList.add("animation-init");
 
-    return animeInit
-  }
+    return animeInit;
+  };
 
-  return { init }
-})()
+  return { init };
+})();
 
-window.cfAnimations = cfAnimations
+window.cfAnimations = cfAnimations;
 
-export default cfAnimations
+export default cfAnimations;

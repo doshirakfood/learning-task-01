@@ -1,8 +1,10 @@
+@import "../../scss/breakpoints";
+
 .welcome {
   $pic-radius: 4px;
 
-  color: #fff;
   position: relative;
+  color: #fff;
   background-color: var(--welcome-bg-color);
 
   //>= 1440px
@@ -19,12 +21,12 @@
   //>= 0px
   @media screen and (min-width: $screen-m) {
     height: 458px;
-    margin-top: 0px;
+    margin-top: 0;
   }
 
   &__container {
-    z-index: 2;
     position: relative;
+    z-index: 2;
 
     //>= 992px
     @media screen and (min-width: $screen-tl) {
@@ -38,8 +40,8 @@
   }
 
   &__blob {
-    z-index: 1;
     position: absolute;
+    z-index: 1;
 
     //>= 992px
     @media screen and (min-width: $screen-tl) {
@@ -52,13 +54,13 @@
     }
 
     &.primary {
-      left: 0px;
-      bottom: 0px;
+      bottom: 0;
+      left: 0;
       fill: var(--welcome-fill-blob-primary);
     }
 
     &.secondary {
-      top: 0px;
+      top: 0;
       fill: var(--welcome-fill-blob-secondary);
 
       //>= 1440px
@@ -68,16 +70,16 @@
 
       //>= 992px
       @media screen and (min-width: $screen-tl) {
-        right: 0px;
+        right: 0;
       }
     }
   }
 
   &-slide {
     &__row {
-      height: 100%;
       display: flex;
       justify-content: space-between;
+      height: 100%;
 
       //>= 992px
       @media screen and (min-width: $screen-tl) {
@@ -106,31 +108,31 @@
       @media screen and (min-width: $screen-tl) {
         &.left {
           flex-basis: 447px;
-          margin: 25px 20px 0px 0px;
+          margin: 25px 20px 0 0;
         }
 
         &.right {
-          margin: 0px;
           flex-basis: 540px;
+          margin: 0 0 0 60px;
         }
       }
 
       //>= 0px
       @media screen and (min-width: $screen-m) {
         &.left {
-          flex:  1 0 auto;
+          flex: 1 0 auto;
           max-width: 420px;
-          margin: 0px 0px 50px;
+          margin: 0 0 50px;
         }
 
         &.right {
-          margin: 0px 65px 0px 0px;
+          margin: 0 65px 0 0;
         }
       }
 
       @media screen and (max-width: 320px) {
         &.right {
-          margin: 0px 44px 0px 0px;
+          margin: 0 44px 0 0;
         }
       }
     }
@@ -138,12 +140,12 @@
 
   &__slider {
     position: initial;
+
     .splide {
       &__arrows {
+        position: absolute;
         top: auto;
         left: auto;
-        position: absolute;
-
         display: flex;
         flex-direction: column;
 
@@ -158,20 +160,16 @@
           right: 20px;
           bottom: -45px;
         }
-
       }
 
       &__arrow {
-        // -reset-
-        left: 0px;
-        right: 0px;
         position: relative;
-        opacity: 1;
-        border-radius: 0px;
-        transform: translateY(0px);
+        right: 0;
+        left: 0;
         background-color: transparent;
-        // -/reset-
-
+        border-radius: 0;
+        transform: translateY(0px);
+        opacity: 1;
         transition: transform 0.25s ease;
 
         //>= 992px
@@ -220,6 +218,7 @@
 
         &--next {
           order: -1;
+
           svg {
             fill: #fff;
           }
@@ -234,8 +233,9 @@
 
       &__pagination {
         position: relative;
-        padding: 13px 0px 0px 110px;
         justify-content: flex-start;
+        padding: 13px 0 0 110px;
+
         @media screen and (max-width: 320px) {
           padding-left: 90px;
         }
@@ -244,12 +244,13 @@
   }
 
   &__title {
-    margin: 0px;
+    margin: 0;
     font-weight: 500;
 
     //>= 992px
     @media screen and (min-width: $screen-tl) {
       font-size: 72px;
+
       &.secondary {
         font-size: 48px;
       }
@@ -258,6 +259,7 @@
     //>= 0px
     @media screen and (min-width: $screen-m) {
       font-size: 40px;
+
       &.secondary {
         font-size: 28px;
       }
@@ -267,35 +269,35 @@
   &__desc {
     //>= 992px
     @media screen and (min-width: $screen-tl) {
+      margin: 28px 0 0;
       font-size: 24px;
       line-height: 32px;
-      margin: 28px 0px 0px;
     }
 
     //>= 0px
     @media screen and (min-width: $screen-m) {
+      margin: 20px 0 0;
       font-size: 16px;
-      margin: 20px 0px 0px;
     }
   }
 
   &__more {
-    color: inherit;
-    text-decoration: none;
     display: inline-block;
     padding-bottom: 2px;
+    color: inherit;
+    text-decoration: none;
     border-bottom: 2px solid;
 
     //>= 992px
     @media screen and (min-width: $screen-tl) {
+      margin: 40px 0 0;
       font-size: 24px;
-      margin: 40px 0px 0px;
     }
 
     //>= 0px
     @media screen and (min-width: $screen-m) {
+      margin: 20px 0 0;
       font-size: 16px;
-      margin: 20px 0px 0px;
     }
   }
 
@@ -324,13 +326,14 @@
 
   .slider {
     &-thumbs {
-      bottom: -98px;
       position: absolute;
+      bottom: -98px;
+
       .splide {
         &__slide {
           overflow: hidden;
+          border: 0 !important;
           border-radius: $pic-radius;
-          border: 0px !important;
         }
       }
 
@@ -341,8 +344,8 @@
 
       //>= 992px
       @media screen and (min-width: $screen-tl) {
-        width: 354px;
         display: block;
+        width: 354px;
       }
 
       //>= 0px

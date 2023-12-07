@@ -4,6 +4,7 @@
   $block-name: &; // #{$block-name}__element
 
   font-size: 18px;
+
   &__row {
     display: flex;
     align-items: center;
@@ -13,10 +14,6 @@
     text-decoration: none;
     & + #{$block-name}__item {
       margin-left: 40px;
-    }
-
-    &:hover {
-      opacity: .8;
     }
   }
 }

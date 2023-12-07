@@ -5,14 +5,14 @@
 
   //>= 992px
   @media screen and (min-width: $screen-tl) {
-    &.--desktop {
+    &--desktop {
       display: inline-block;
     }
   }
 
   //>= 0px
   @media screen and (min-width: $screen-m) {
-    &.--desktop {
+    &--desktop {
       display: none;
     }
   }
@@ -28,10 +28,11 @@
   }
 
   &__item {
+    @include flex-center();
+
     width: 48px;
     height: 48px;
 
-    @include flex-center;
     & + #{$block-name}__item {
       margin-left: 4px;
       padding-left: 4px;

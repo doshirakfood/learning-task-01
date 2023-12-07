@@ -1,27 +1,30 @@
 @import "../../scss/mixins/grid";
 @import "../../scss/mixins/flexbox";
+@import "../../scss/breakpoints";
 
 .header {
   $block-header: &; // #{$block-name}__element
 
   //>= 992px
   @media screen and (min-width: $screen-tl) {
-    padding: 20px 0px;
+    padding: 20px 0;
   }
 
   //>= 0px
   @media screen and (min-width: $screen-m) {
-    padding: 15.5px 0px;
+    padding: 15.5px 0;
   }
 
   &__row {
+    @include flex-center-sb();
+
     margin: -5px;
-    @include flex-center-sb;
   }
 
   &__col {
     margin: 5px;
-    &.--left {
+
+    &--left {
       //>= 992px
       @media screen and (min-width: $screen-tl) {
         padding-right: 71px;
@@ -29,7 +32,7 @@
       }
     }
 
-    &.--right {
+    &--right {
       @include flex-center-fe;
     }
   }
@@ -39,7 +42,9 @@
 
     display: inline-flex;
     align-items: center;
+
     &__item {
+
       & + #{$block-groups}__item {
         margin-left: 8px;
       }

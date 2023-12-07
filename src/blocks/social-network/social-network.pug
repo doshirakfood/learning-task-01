@@ -44,14 +44,9 @@ mixin social-network(mods)
       }
     }
 
-  nav(aria-label="Соц.сети").social-network(class= allMods)&attributes(attributes).--desktop
+  nav.social-network.social-network--desktop(class=allMods, aria-label='Соц.сети')&attributes(attributes)
     .social-network__row
       each variable in listArray
-        a(
-          href="#"
-          aria-label=`Следите за нами в ${variable.label}`
-          title=`Следите за нами в ${variable.label}`
-          class=`social-network__item color-${variable.name}`
-        )
+        a(href='#', aria-label=`Следите за нами в ${variable.label}`, title=`Следите за нами в ${variable.label}`, class=`social-network__item color-${variable.name}`)
           svg.social-network__icon
             use(href= src.icon + variable.icon)

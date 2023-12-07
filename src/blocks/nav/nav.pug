@@ -27,7 +27,7 @@ mixin nav(mods)
       }
     }
 
-  nav.nav(class= allMods aria-label="Главное меню")&attributes(attributes).--desktop
+  nav.nav.nav--desktop(class=allMods, aria-label='Главное меню')&attributes(attributes)
     .nav__row
       each variable in listArray
-        a(href="#").nav__item=variable
+        a.nav__item(href='#')= variable

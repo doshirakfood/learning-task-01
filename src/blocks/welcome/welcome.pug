@@ -13,9 +13,9 @@ mixin welcome(mods)
     var allMods = '';
     var sliderParams = {
       options: {
-        type: "loop",
-        gap: "10px",
-        nearby: "nearby",
+        type: 'loop',
+        gap: '10px',
+        nearby: 'nearby',
       },
       breakpoints: {
         991: {
@@ -24,14 +24,14 @@ mixin welcome(mods)
       },
       thumbs: true,
       thumbsOptions: {
-        type: "loop",
-        gap: "20px",
-        fixedWidth: "196px",
-        fixedHeight: "196px",
+        type: 'loop',
+        gap: '20px',
+        fixedWidth: '196px',
+        fixedHeight: '196px',
         breakpoints: {
           1280: {
-            fixedWidth: "167px",
-            fixedHeight: "167px",
+            fixedWidth: '167px',
+            fixedHeight: '167px',
           }
         }
       }
@@ -94,61 +94,31 @@ mixin welcome(mods)
       }
     }
 
-  section(
-    style=`
-      --welcome-bg-color: ${slides[0].color};
-      --welcome-fill-blob-primary: ${slides[0].colorBlobsArray[0]};
-      --welcome-fill-blob-secondary: ${slides[0].colorBlobsArray[1]};
-    `
-  ).section.welcome(class=allMods)&attributes(attributes)
-    svg.welcome__blob.primary(
-      width="310"
-      height="247"
-      viewBox="0 0 310 247"
-      xmlns="http://www.w3.org/2000/svg"
-    )
-      path.js-animation(
-        data-animation-options=`${JSON.stringify(blobAnimationParams.primary)}`
-        d="M292.595 233.862C301.528 243.321 307.92 246.562 310 247H0V9.20147C1.64194 6.24541 17.7331 -2.44726 38.0932 0.661741C85.7098 7.9328 76.1864 29.237 117.564 41.0612C133.521 45.6213 164.523 33.5068 167.479 31.2077C169.843 29.3684 177.659 27.3758 181.271 26.6094C196.815 23.1059 233.222 22.2081 254.502 46.6449C280.915 76.976 270.739 110.869 268.666 117.776L268.623 117.919C267.047 123.174 266.434 135.217 266.324 140.582C267.2 146.166 270.659 158.712 277.489 164.23C286.028 171.128 289.968 175.726 292.595 184.923C294.697 192.28 291.72 202.878 289.968 207.257C287.122 212.184 283.663 224.403 292.595 233.862Z"
-      )
+  section.section.welcome(class=allMods, style=`--welcome-bg-color: ${slides[0].color}; --welcome-fill-blob-primary: ${slides[0].colorBlobsArray[0]}; --welcome-fill-blob-secondary: ${slides[0].colorBlobsArray[1]};`)&attributes(attributes)
+    svg.welcome__blob.primary(width='310', height='247', viewBox='0 0 310 247', xmlns='http://www.w3.org/2000/svg')
+      path.js-animation(data-animation-options=`${JSON.stringify(blobAnimationParams.primary)}`, d='M292.595 233.862C301.528 243.321 307.92 246.562 310 247H0V9.20147C1.64194 6.24541 17.7331 -2.44726 38.0932 0.661741C85.7098 7.9328 76.1864 29.237 117.564 41.0612C133.521 45.6213 164.523 33.5068 167.479 31.2077C169.843 29.3684 177.659 27.3758 181.271 26.6094C196.815 23.1059 233.222 22.2081 254.502 46.6449C280.915 76.976 270.739 110.869 268.666 117.776L268.623 117.919C267.047 123.174 266.434 135.217 266.324 140.582C267.2 146.166 270.659 158.712 277.489 164.23C286.028 171.128 289.968 175.726 292.595 184.923C294.697 192.28 291.72 202.878 289.968 207.257C287.122 212.184 283.663 224.403 292.595 233.862Z')
 
-    svg.welcome__blob.secondary(
-      width="277"
-      height="110"
-      viewBox="0 0 277 110"
-      xmlns="http://www.w3.org/2000/svg"
-    )
-      path.js-animation(
-        data-animation-options=`${JSON.stringify(blobAnimationParams.secondary)}`
-        d="M218.447 79.0195C248.733 69.4292 277 43.1513 277 15.7231C277 10.4886 275.872 5.15566 273.829 0H0.0692462C-0.288445 6.85278 0.629352 15.6276 5.43453 24.1632C15.5305 42.097 34.9829 45.4715 48.4137 71.4462C65.4211 104.338 82.1195 106.565 87.0221 108.119C91.9248 109.674 123.819 115.177 150.757 95.2516C177.721 75.3065 185.132 89.5688 218.447 79.0195Z"
-      )
+    svg.welcome__blob.secondary(width='277', height='110', viewBox='0 0 277 110', xmlns='http://www.w3.org/2000/svg')
+      path.js-animation(data-animation-options=`${JSON.stringify(blobAnimationParams.secondary)}`, d='M218.447 79.0195C248.733 69.4292 277 43.1513 277 15.7231C277 10.4886 275.872 5.15566 273.829 0H0.0692462C-0.288445 6.85278 0.629352 15.6276 5.43453 24.1632C15.5305 42.097 34.9829 45.4715 48.4137 71.4462C65.4211 104.338 82.1195 106.565 87.0221 108.119C91.9248 109.674 123.819 115.177 150.757 95.2516C177.721 75.3065 185.132 89.5688 218.447 79.0195Z')
 
     .welcome__container.container
       +slider(
         sliderParams.options,
         sliderParams.breakpoints,
         sliderParams.thumbs,
-        sliderParams.thumbsOptions
-      ).welcome__slider
+        sliderParams.thumbsOptions).welcome__slider
         each slideItem, index in slides
-          div(
-            data-color=`${slideItem.color}`
-            data-colors-blob=`${slideItem.colorBlobsArray.join()}`
-            data-slider-thumb=`./img/${slideItem.pic}`
-          ).welcome-slide.splide__slide
+          .welcome-slide.splide__slide(data-color=`${slideItem.color}`, data-colors-blob=`${slideItem.colorBlobsArray.join()}`, data-slider-thumb=`./img/${slideItem.pic}`)
             .welcome-slide__row
               //left
               .welcome-slide__col.left
-                h2.welcome__title.title(class=`${index === 2 ? 'secondary' : ''}`)=slideItem.title
+                h2.welcome__title.title(class=`${index === 2 ? 'secondary' : ''}`)= slideItem.title
                 - if(slideItem.desc)
-                  p.welcome__desc=slideItem.desc
+                  p.welcome__desc= slideItem.desc
                 - if(slideItem.more)
-                  a(href="#").welcome__more Подробнее
+                  a.welcome__more(href='#') Подробнее
 
               //right
               .welcome-slide__col.right
-                img(
-                  data-splide-lazy=`./img/${slideItem.pic}`
-                  alt=slideItem.title
-                ).welcome__pic
+                img.welcome__pic(src='', data-splide-lazy=`./img/${slideItem.pic}`, alt=slideItem.title)
 

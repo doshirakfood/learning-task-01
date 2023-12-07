@@ -18,15 +18,10 @@ mixin sidebar(mods)
       }
     }
 
-  .sidebar(class= allMods)&attributes(attributes)
-    button(
-      type="button"
-      title="Открыть меню"
-      aria-label="Открыть меню"
-      data-slideout-id="sidebar-slideout"
-    ).button.js-slideout-trigger.sidebar-burger
+  .sidebar(class=allMods)&attributes(attributes)
+    button.button.js-slideout-trigger.sidebar-burger(type='button', title='Открыть меню', aria-label='Открыть меню', data-slideout-id='sidebar-slideout')
       span.sidebar-burger__line
 
-    #sidebar-slideout.sidebar-slideout.slideout
+    .sidebar-slideout.slideout#sidebar-slideout
       .sidebar-slideout__main
       .sidebar-slideout__footer

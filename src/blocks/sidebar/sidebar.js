@@ -1,34 +1,33 @@
 import ready from "../../js/utils/documentReady.js";
 
 const сfSidebar = (() => {
-  const $navMain = document.querySelector('.nav') || false
-  const $socialNetwork = document.querySelector('.social-network') || false
-  const $sidebarBurger = document.querySelector('.sidebar-burger') || false
-  const $sidebarPanel = document.querySelector('.sidebar-slideout') || false
+  const $navMain = document.querySelector(".nav") || false;
+  const $socialNetwork = document.querySelector(".social-network") || false;
+  const $sidebarPanel = document.querySelector(".sidebar-slideout") || false;
 
   const init = () => {
     try {
       if ($sidebarPanel !== false) {
-        build()
+        build();
       }
     } catch (error) {
-      console.error('#cfSidebar', error.message)
+      console.error("#cfSidebar", error.message);
     }
-  }
+  };
 
   const build = () => {
     const navMob = $navMain.cloneNode(true);
     const socialMob = $socialNetwork.cloneNode(true);
 
-    navMob.classList.add('sidebar-menu')
-    navMob.classList.remove('--desktop')
+    navMob.classList.add("sidebar-menu");
+    navMob.classList.remove("nav--desktop");
 
-    socialMob.classList.add('sidebar-social-network')
-    socialMob.classList.remove('--desktop')
+    socialMob.classList.add("sidebar-social-network");
+    socialMob.classList.remove("social-network--desktop");
 
     // output main
-    $sidebarPanel.querySelector('.sidebar-slideout__main').insertAdjacentHTML(
-      'afterbegin',
+    $sidebarPanel.querySelector(".sidebar-slideout__main").insertAdjacentHTML(
+      "afterbegin",
       `
             ${navMob.outerHTML}
             <a
@@ -42,19 +41,16 @@ const сfSidebar = (() => {
                 </svg>
                 Хочу помочь
             </a>
-        `
-      );
+        `,
+    );
 
     // output footer
-    $sidebarPanel.querySelector('.sidebar-slideout__footer').insertAdjacentHTML(
-      'afterbegin',
-      socialMob.outerHTML
-    );
+    $sidebarPanel
+      .querySelector(".sidebar-slideout__footer")
+      .insertAdjacentHTML("afterbegin", socialMob.outerHTML);
   };
 
-  return { init }
-})()
-
-window.сfSidebar = сfSidebar
+  return { init };
+})();
 
 ready(() => сfSidebar.init());
