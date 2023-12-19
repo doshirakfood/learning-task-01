@@ -1,3 +1,5 @@
+@import "./breakpoints";
+
 :root {
   font-size: var(--font-size-root);
 }
@@ -41,7 +43,56 @@ svg {
 }
 
 a {
+  transition: all var(--transition-delay);
   &:hover {
     opacity: 0.8;
+  }
+}
+
+.subtitle {
+  font-size: 18px;
+  line-height: 26px;
+
+  //>= 992px
+  @media screen and (min-width: $screen-tl) {
+    font-size: 32px;
+    line-height: 44px;
+  }
+}
+
+.section {
+  padding: 40px 0px;
+
+  //>= 768px
+  @media screen and (min-width: $screen-ti) {
+    padding: 95px 0px;
+  }
+
+  &-header {
+    margin: 0px 0px 25px;
+
+    //>= 768px
+    @media screen and (min-width: $screen-ti) {
+      margin: 0px 0px 40px;
+    }
+
+    &__row {
+      margin: -10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__col {
+      margin: 10px;
+    }
+  }
+
+  &__title {
+    margin: 0px;
+    //<= 992px
+    @media screen and (max-width: $screen-tl) {
+      font-size: 20px;
+    }
   }
 }

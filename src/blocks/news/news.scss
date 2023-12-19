@@ -1,0 +1,134 @@
+@import "../../scss/breakpoints";
+
+.news {
+  &__row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    //>= 768px
+    @media screen and (min-width: $screen-ti) {
+      flex-direction: row;
+    }
+  }
+
+  &__col {
+    //>= 768px
+    @media screen and (min-width: $screen-ti) {
+      height: 550px;
+    }
+
+    &--left {
+      //>= 768px
+      @media screen and (min-width: $screen-ti) {
+        width: 825px;
+      }
+    }
+
+    &--right {
+      margin: 15px 0px 0px;
+
+      //>= 992px
+      @media screen and (min-width: $screen-tl) {
+        margin: 0px 0px 0px 80px;
+      }
+
+      //>= 768px
+      @media screen and (min-width: $screen-ti) {
+        width: 372px;
+        margin: 0px 0px 0px 30px;
+        overflow-y: auto;
+      }
+    }
+  }
+
+  &__more {
+    display: none;
+
+    //>= 768px
+    @media screen and (min-width: $screen-ti) {
+      display: inline-flex;
+    }
+  }
+
+  &-preview {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: flex-end;
+    height: 300px;
+    padding: 20px;
+    background: linear-gradient(358deg, rgba(15, 15, 16, 0.74) 10%, rgba(0, 0, 0, 0.00) 60%), var(--news-pic) no-repeat;
+    background-size: cover;
+
+    //>= 992px
+    @media screen and (min-width: $screen-tl) {
+      padding: 50px;
+    }
+
+    //>= 768px
+    @media screen and (min-width: $screen-ti) {
+      height: 100%;
+    }
+
+    &__date {
+      font-size: 16px;
+      display: block;
+      margin: 0px 0px 10px;
+
+      //>= 768px
+      @media screen and (min-width: $screen-ti) {
+        font-size: 24px;
+        margin: 0px 0px 20px;
+      }
+    }
+
+    &__name {
+      font-size: 20px;
+
+      //>= 768px
+      @media screen and (min-width: $screen-ti) {
+        font-size: 32px;
+      }
+    }
+  }
+
+  &-list {
+    $list-block: &;
+
+    display: flex;
+    flex-direction: column;
+    &__item {
+      text-decoration: none;
+      & + #{$list-block}__item {
+        margin-top: 40px;
+      }
+
+      &:hover {
+        #{$list-block}__name {
+          color: var(--color-text-5);
+        }
+      }
+    }
+
+    &__date {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: var(--color-text-1);
+    }
+
+    &__name {
+      display: block;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-text-2);
+      transition: color var(--transition-delay);
+
+      //>= 768px
+      @media screen and (min-width: $screen-ti) {
+        font-size: 24px;
+      }
+    }
+  }
+}

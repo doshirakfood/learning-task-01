@@ -11,6 +11,7 @@
   justify-content: center;
   padding: 11px 20px;
   color: var(--front-invert);
+  font-size: 18px;
   text-decoration: none;
   background: none;
   border: none;
@@ -22,9 +23,14 @@
   .icon {
     width: 20px;
     height: 20px;
+    transition: all var(--transition-delay);
 
     &--left {
       margin-right: 10px;
+    }
+
+    &--right {
+      margin-left: 10px;
     }
   }
 
@@ -77,13 +83,28 @@
 
   &--help {
     padding: 0;
-    font-size: 18px;
 
     .icon {
       width: 44px;
       height: 44px;
       transform-origin: center;
       animation: anime-heart var(--transition-delay-animation) ease-in-out infinite alternate;
+    }
+  }
+
+  &--link {
+    padding: 11px 0px;
+  }
+
+  &--arrow {
+    .icon {
+      transform: scale(-1);
+    }
+
+    &:hover {
+      .icon {
+        transform: scale(-1) translateX(-12px);
+      }
     }
   }
 

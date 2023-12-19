@@ -30,4 +30,11 @@
       fill: var(--color-icon-4);
     }
   }
+
+  &-text {
+    &-5 {
+      color: var(--color-text-5) !important;
+      fill: var(--color-text-5) !important;
+    }
+  }
 }

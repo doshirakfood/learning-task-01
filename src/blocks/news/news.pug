@@ -1,0 +1,78 @@
+//- Все примеси в этом файле должны начинаться c имени блока (welcome)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт в сборку
+
+mixin news(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +welcome('some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    var newsList = [
+      {
+        date: '16 августа',
+        name: '«Лига ветеранов спорта» в Санкт-Петербурге'
+      },
+      {
+        date: '7 августа',
+        name: 'Первая неформальная встреча «Школы наставничества» состоялась в Санкт-Петербурге'
+      },
+      {
+        date: '24 июля',
+        name: 'Итоги деятельности Фонда в июле 2022 года'
+      },
+      {
+        date: '16 августа',
+        name: '«Лига ветеранов спорта» в Санкт-Петербурге'
+      },
+    ];
+
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' about--' + modsList[i].trim();
+      }
+    }
+
+  section.section.news(class=allMods)&attributes(attributes)
+    .section-header
+      .section-header__container.container
+        .section-header__row
+          .section-header__col
+            p.section__title.subtitle Новости Фонда
+
+          .section-header__col
+            +button('link', 'Все новости', 'link, arrow').news__more.color-text-5
+              | Все новости
+              svg.icon.icon--right.color-icon-4
+                use(href = src.icon + 'icon__arrow')
+
+    .news__main
+      .news__container.container
+        .news__row
+          // 1
+          .news__col.news__col--left
+            a(
+              href="#"
+              title="Первая неформальная встреча «Школы наставничества» состоялась в Санкт-Петербурге"
+              aria-label="Первая неформальная встреча «Школы наставничества» состоялась в Санкт-Петербурге"
+              style="--news-pic: url('../img/news-preview.jpg')"
+            ).news-preview
+              span.news-preview__content
+                span.news-preview__date 28 августа
+                span.news-preview__name.font-tertiary Первая неформальная встреча «Школы наставничества» состоялась в Санкт-Петербурге
+
+          // 2
+          .news__col.news__col--right
+            .news-list
+              each newsItem, index in newsList
+                a(
+                  href="#"
+                  title=`${newsItem.name}`
+                  aria-label=`${newsItem.name}`
+                ).news-list__item
+                  span.news-list__date=newsItem.date
+                  span.news-list__name.font-tertiary=newsItem.name

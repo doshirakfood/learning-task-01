@@ -1,7 +1,9 @@
 @use "sass:color";
 
 :root {
+  --color-text-1: #7e7e7e;
   --color-text-2: #000;
+  --color-text-5: #d91869;
   --color-black: #000;
   --color-white: #fff;
   --color-gold: #f2a84f;
@@ -13,6 +15,8 @@
   --color-icon-1: #000;
   --color-icon-4: #d91869;
 
+  --color-stroke-2: #c7c7c7;
+
   --body-color: var(--front-primary);
   --body-bg: var(--back-primary);
   --body-bg-10: #f3f3f3;
@@ -23,7 +27,8 @@
     "Segoe UI Symbol";
   --font-serif: Georgia, "Times New Roman", Times, serif;
   --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, "Courier New", monospace;
-  --font-secondary: 'Noto Sans Medium', Arial, sans-serif;
+  --font-secondary: 'Noto Sans Medium', 'Roboto Flex', Arial, sans-serif;
+  --font-tertiary: 'Source Serif Pro', 'Roboto Flex', Arial, sans-serif;
   --font-size-root: 100%;
   --font-size-base: 1rem;
   --font-weight-base: 400;

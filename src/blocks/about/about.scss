@@ -1,0 +1,121 @@
+@import "../../scss/breakpoints";
+
+.about {
+  padding-top: 70px;
+
+  &-main {
+    &__row {
+      display: flex;
+      flex-direction: column;
+
+      //>= 992px
+      @media screen and (min-width: $screen-tl) {
+        flex-direction: row;
+      }
+    }
+
+    &__col {
+      &--right {
+        margin: 30px 0px 0px;
+
+        //>= 1440px
+        @media screen and (min-width: $screen-dl) {
+          margin: 0px 0px 0px 130px;
+        }
+
+        //>= 992px
+        @media screen and (min-width: $screen-tl) {
+          margin: 0px 0px 0px 20px;
+        }
+      }
+    }
+  }
+
+  &__figure {
+    width: 280px;
+    height: 180px;
+
+    //>= 1440px
+    @media screen and (min-width: $screen-dl) {
+      width: 530px;
+      height: 330px;
+    }
+
+    //>= 992px
+    @media screen and (min-width: $screen-tl) {
+      width: 420px;
+      height: 270px;
+    }
+  }
+
+  &__intro {
+    margin: 0px;
+  }
+
+  &__more {
+    margin: 50px 0px 0px;
+
+    //>= 992px
+    @media screen and (min-width: $screen-tl) {
+      margin: 75px 0px 0px;
+    }
+  }
+
+  &-footer {
+    $footer-block: &;
+
+    margin: 50px 0px 0px;
+    padding: 50px 0px 0px;
+    border-top: 1px solid var(--color-stroke-2);
+
+    //>= 992px
+    @media screen and (min-width: $screen-tl) {
+      margin: 70px 0px 0px;
+      padding: 70px 0px 0px;
+    }
+
+    &__row {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      //>= 768px
+      @media screen and (min-width: $screen-ti) {
+        flex-direction: row;
+      }
+    }
+
+    &__col {
+
+      //>= 768px
+      @media screen and (min-width: $screen-ti) {
+        flex-basis: calc(100% / 3);
+      }
+
+      & + #{$footer-block}__col {
+        margin: 50px 0px 0px;
+
+        //>= 768px
+        @media screen and (min-width: $screen-ti) {
+          margin: 0px 0px 0px 80px;
+        }
+      }
+    }
+
+    &__name {
+      font-weight: 700;
+      color: var(--color-name);
+      margin: 0px 0px 25px;
+
+      //<= 992px
+      @media screen and (max-width: $screen-tl) {
+        font-size: 28px;
+      }
+    }
+
+    &__desc {
+      font-size: 24px;
+      margin: 0px;
+    }
+  }
+}
